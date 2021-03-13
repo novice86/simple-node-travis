@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node-travis .
+  - docker build -t simple-node-travis --build-arg THIRD_PLANET_FROM_SUN=${THIRD_PLANET_FROM_SUN} .
   - docker tag simple-node-travis:latest dpopova/udacity:simple-node-travis
 
 after_success:
